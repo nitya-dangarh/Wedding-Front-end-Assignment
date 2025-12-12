@@ -4,7 +4,15 @@ A pixel-perfect implementation of a multi-step quiz UI based on a provided Figma
 
 Live demo: https://wedding-front-end-assignment.vercel.app
 
-Result screenshots: public/result1.png, public/result2.png, public/result3.png
+Result screenshots: 
+<img width="1437" height="806" alt="Result1" src="https://github.com/user-attachments/assets/0a956c39-b390-4ed5-b961-d445e980771c" />
+<img width="1437" height="806" alt="result2" src="https://github.com/user-attachments/assets/d09db190-62aa-4929-8bf0-b8f60347b2e1" />
+<img width="1437" height="796" alt="result3" src="https://github.com/user-attachments/assets/b5b29fad-12ca-458f-a54f-c476f4aee9f7" />
+![cat-cute](https://github.com/user-attachments/assets/83fd147c-110b-4e09-a008-d0b44d52c8da)
+
+
+
+
 
 ## Key Features
 - Pixel-perfect reproduction of Figma screens
