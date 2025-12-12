@@ -77,13 +77,6 @@ project-root/
 ## Assumptions & Notes
 - Questions are static and stored locally (no backend).
 - Desktop-only layout per assignment requirements.
-- Images in /public are used for backgrounds and result previews.
-- Animations via Framer Motion are optional and can be toggled/extended.
-
-## Suggestions
-- Add unit tests for core components (QuizCard, ProgressBar).
-- Move questions to a JSON file to decouple data from UI.
-- Add accessibility enhancements (keyboard navigation, ARIA labels).
 
 ## Author / Time Spent
 Project implemented as an assignment — ~6 hours total (UI, logic, polish, deployment).
