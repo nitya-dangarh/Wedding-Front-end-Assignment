@@ -72,7 +72,7 @@ export default function QuizCard({
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
-          marginTop: '206px',
+          marginTop: '94px',
           marginBottom: '16px'
         }}
       >
@@ -96,13 +96,14 @@ export default function QuizCard({
       >
         <p 
           style={{ 
-            fontFamily: 'Manrope, sans-serif',
-            fontWeight: 500,
-            fontSize: '20px',
-            lineHeight: '24px',
-            letterSpacing: '-0.31px',
             color: '#15313D',
             textAlign: 'center',
+            fontFamily: 'Manrope, sans-serif',
+            fontSize: '20px',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            lineHeight: '24px',
+            letterSpacing: '-0.312px',
             margin: 0
           }}
         >
@@ -113,21 +114,46 @@ export default function QuizCard({
       {/* Progress Indicator */}
       <div className="mb-8 flex justify-center items-center" style={{ gap: '0' }}>
         {Array.from({ length: totalQuestions }).map((_, index) => (
-          <svg
-            key={index}
-            xmlns="http://www.w3.org/2000/svg"
-            width="216"
-            height="2"
-            viewBox="0 0 216 2"
-            fill="none"
-            style={{ display: 'block' }}
-          >
-            <path 
-              d="M0 1H216" 
-              stroke={index < currentQuestion ? '#E3E3E3' : '#E6E6E6'} 
-              strokeWidth="2"
-            />
-          </svg>
+          <div key={index} style={{ position: 'relative', display: 'inline-block' }}>
+            {/* Unfilled segment background */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="216"
+              height="2"
+              viewBox="0 0 216 2"
+              fill="none"
+              style={{ display: 'block' }}
+            >
+              <path 
+                d="M0 1H216" 
+                stroke="#E6E6E6" 
+                strokeWidth="2"
+              />
+            </svg>
+            {/* Filled segment overlay */}
+            {index < currentQuestion && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="182"
+                height="8"
+                viewBox="0 0 182 8"
+                fill="none"
+                style={{ 
+                  display: 'block',
+                  position: 'absolute',
+                  top: '-3px',
+                  left: '0'
+                }}
+              >
+                <path 
+                  d="M4 4H178" 
+                  stroke="#15313D" 
+                  strokeWidth="8" 
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
+          </div>
         ))}
       </div>
 

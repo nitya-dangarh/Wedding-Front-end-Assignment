@@ -24,13 +24,19 @@ export default function NavigationButtons({
       height: '50px'
     }}>
       <motion.button
-        className="rounded-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-blue disabled:opacity-50 disabled:cursor-not-allowed"
+        className="flex items-center justify-center focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
         style={{
-          width: '50px',
+          display: 'flex',
+          width: '53px',
           height: '50px',
-          backgroundColor: '#FFFFFF',
-          color: '#15313D',
-          border: '1px solid #E6E6E6'
+          padding: '0',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '10px',
+          borderRadius: '10px',
+          border: '1px solid rgba(150, 229, 255, 0.05)',
+          background: 'linear-gradient(90deg, #C6E9F7 0.09%, #E5F8FF 99.91%)',
+          color: '#15313D'
         }}
         whileHover={canGoPrevious ? { scale: 1.05 } : {}}
         whileTap={canGoPrevious ? { scale: 0.95 } : {}}
@@ -38,19 +44,29 @@ export default function NavigationButtons({
         disabled={!canGoPrevious}
         aria-label="Previous question"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        <img 
+          src="/arrow_backw.png"
+          alt="Previous"
+          width="24"
+          height="24"
+          style={{ display: 'block' }}
+        />
       </motion.button>
       
       <motion.button
-        className="rounded-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-blue disabled:opacity-50 disabled:cursor-not-allowed"
+        className="flex items-center justify-center focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
         style={{
-          width: '50px',
+          display: 'flex',
+          width: '53px',
           height: '50px',
-          backgroundColor: '#FFFFFF',
-          color: '#15313D',
-          border: '1px solid #E6E6E6'
+          padding: '0',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '10px',
+          borderRadius: '10px',
+          border: '1px solid rgba(150, 229, 255, 0.05)',
+          background: 'linear-gradient(90deg, #C6E9F7 0.09%, #E5F8FF 99.91%)',
+          color: '#15313D'
         }}
         whileHover={canGoNext ? { scale: 1.05 } : {}}
         whileTap={canGoNext ? { scale: 0.95 } : {}}
@@ -58,9 +74,13 @@ export default function NavigationButtons({
         disabled={!canGoNext}
         aria-label="Next question"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        <img 
+          src="/arrow_forward.png"
+          alt="Next"
+          width="24"
+          height="24"
+          style={{ display: 'block' }}
+        />
       </motion.button>
     </div>
   )

@@ -9,41 +9,52 @@ interface RollingCounterProps {
 }
 
 export default function RollingCounter({ targetValue, duration = 2000 }: RollingCounterProps) {
-  const [currentValue, setCurrentValue] = useState(0)
+  const [displayValue, setDisplayValue] = useState(0)
   
   useEffect(() => {
-    const startTime = Date.now()
-    const startValue = 0
+    // Reset to 0
+    setDisplayValue(0)
     
-    const animate = () => {
-      const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / duration, 1)
+    // Start animation after a brief delay
+    const timeout = setTimeout(() => {
+      const startTime = Date.now()
+      const startValue = 0
       
-      // Easing function for smooth animation
-      const easeOutCubic = 1 - Math.pow(1 - progress, 3)
-      const value = startValue + (targetValue - startValue) * easeOutCubic
-      
-      setCurrentValue(Math.floor(value))
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      } else {
-        setCurrentValue(targetValue)
+      const animate = () => {
+        const elapsed = Date.now() - startTime
+        const progress = Math.min(elapsed / duration, 1)
+        
+        // Easing function
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3)
+        const value = Math.floor(startValue + (targetValue - startValue) * easeOutCubic)
+        
+        setDisplayValue(value)
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        } else {
+          setDisplayValue(targetValue)
+        }
       }
-    }
+      
+      animate()
+    }, 200)
     
-    animate()
+    return () => clearTimeout(timeout)
   }, [targetValue, duration])
 
-  // Calculate the Y position to show the current digit
-  const yPosition = -currentValue * 214
+  // Calculate Y position for rolling effect
+  const yPosition = -displayValue * 214
 
   return (
     <div 
-      className="relative overflow-hidden flex items-center justify-center"
+      className="relative overflow-hidden"
       style={{ 
         width: '116px', 
-        height: '214px'
+        height: '214px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
       }}
     >
       <motion.div
@@ -52,10 +63,9 @@ export default function RollingCounter({ targetValue, duration = 2000 }: Rolling
           y: yPosition
         }}
         transition={{
-          type: 'spring',
-          stiffness: 50,
-          damping: 20,
-          duration: 0.5
+          type: 'tween',
+          duration: 0.3,
+          ease: 'easeOut'
         }}
         style={{
           fontFamily: 'DM Serif Display, serif',
@@ -85,4 +95,3 @@ export default function RollingCounter({ targetValue, duration = 2000 }: Rolling
     </div>
   )
 }
-

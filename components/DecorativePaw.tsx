@@ -2,24 +2,23 @@
 
 export default function DecorativePaw() {
   return (
-    <div className="relative">
-      {/* Speech Bubble */}
-      <div 
-        className="absolute -top-12 -left-8 px-4 py-2 rounded-lg"
+    <div className="relative" style={{ width: '120px', height: '120px' }}>
+      {/* Vector Background Image - Under the GIF */}
+      <img 
+        src="/best of luck vector.png"
+        alt="Best of luck decorative background"
         style={{
-          backgroundColor: '#FFFFFF',
-          border: '2px solid #15313D',
-          fontFamily: 'Manrope, sans-serif',
-          fontSize: '16px',
-          fontWeight: 600,
-          color: '#15313D',
-          whiteSpace: 'nowrap'
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain',
+          zIndex: 0,
+          top: 0,
+          left: 0
         }}
-      >
-        Best of Luck!
-      </div>
-
-      {/* Cat Cute GIF */}
+      />
+      
+      {/* Cat Cute GIF - On top of vector */}
       <img 
         src="/cat-cute.gif"
         alt="Cute cat animation"
@@ -27,9 +26,41 @@ export default function DecorativePaw() {
         height="120"
         style={{
           objectFit: 'contain',
-          display: 'block'
+          display: 'block',
+          position: 'relative',
+          zIndex: 1
         }}
       />
+      
+      {/* Text on Vector Image */}
+      <div 
+        className="absolute"
+        style={{
+          top: '-48px',
+          left: '-32px',
+          padding: '8px 16px',
+          backgroundColor: 'transparent',
+          zIndex: 2
+        }}
+      >
+        <p
+          style={{
+            transform: 'rotate(-2.565deg)',
+            color: '#15313D',
+            textAlign: 'center',
+            fontFamily: '"Caveat Brush", cursive',
+            fontSize: '32.727px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '19.636px',
+            letterSpacing: '-0.818px',
+            margin: 0,
+            whiteSpace: 'nowrap'
+          }}
+        >
+          Best of Luck !
+        </p>
+      </div>
     </div>
   )
 }

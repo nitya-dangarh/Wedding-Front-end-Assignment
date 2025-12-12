@@ -53,7 +53,8 @@ export default function Home() {
         }
       })
       
-      const score = Math.round((correctCount / QUESTIONS.length) * 100)
+      // Calculate score: 4 correct = 100%, 3 = 75%, 2 = 50%, 1 = 25%, 0 = 0%
+      const score = correctCount * 25
       router.push(`/results?score=${score}`)
     }
   }
