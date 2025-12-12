@@ -21,13 +21,13 @@ export default function AnswerOption({ text, isSelected, onClick }: AnswerOption
         paddingTop: '27px',
         paddingBottom: '27px',
         background: isSelected 
-          ? 'linear-gradient(to bottom, #C6E9F7, #E5F8FF)' 
-          : 'linear-gradient(to bottom, #C6E9F7, #E5F8FF)',
+          ? 'linear-gradient(to right, #C6E9F7, #E5F8FF)' 
+          : '#FFFFFF',
         border: `1px solid ${isSelected ? '#96E5FF' : '#E6E6E6'}`,
         borderStyle: 'inset'
       }}
       whileHover={{
-        background: 'linear-gradient(to bottom, #C6E9F7, #E5F8FF)',
+        background: 'linear-gradient(to right, #C6E9F7, #E5F8FF)',
         borderColor: '#96E5FF',
         scale: 1.01
       }}

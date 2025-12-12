@@ -14,7 +14,7 @@ function ResultsContent() {
 export default function Results() {
   return (
     <main className="min-h-screen flex items-center justify-center p-8" style={{
-      background: 'linear-gradient(135deg, #BECFEE 0%, #71C6E2 50%, #D9F4FA 75%, #BECFEE 100%)'
+      backgroundColor: '#E0F2F7'
     }}>
       <Suspense fallback={<div>Loading...</div>}>
         <ResultsContent />

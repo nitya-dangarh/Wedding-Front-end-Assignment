@@ -22,8 +22,9 @@ export default function NavigationButtons({
         style={{
           width: '50px',
           height: '50px',
-          backgroundColor: '#96E5FF',
-          color: '#15313D'
+          backgroundColor: '#FFFFFF',
+          color: '#15313D',
+          border: '1px solid #E6E6E6'
         }}
         whileHover={canGoPrevious ? { scale: 1.05 } : {}}
         whileTap={canGoPrevious ? { scale: 0.95 } : {}}
@@ -41,8 +42,9 @@ export default function NavigationButtons({
         style={{
           width: '50px',
           height: '50px',
-          backgroundColor: '#96E5FF',
-          color: '#15313D'
+          backgroundColor: '#FFFFFF',
+          color: '#15313D',
+          border: '1px solid #E6E6E6'
         }}
         whileHover={canGoNext ? { scale: 1.05 } : {}}
         whileTap={canGoNext ? { scale: 0.95 } : {}}

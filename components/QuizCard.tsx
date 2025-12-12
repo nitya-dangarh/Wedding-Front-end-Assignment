@@ -5,6 +5,7 @@ import QuestionBlock from './QuestionBlock'
 import AnswerOption from './AnswerOption'
 import NavigationButtons from './NavigationButtons'
 import DecorativePaw from './DecorativePaw'
+import { motion } from 'framer-motion'
 
 interface QuizCardProps {
   questionNumber: number
@@ -42,7 +43,11 @@ export default function QuizCard({
   return (
     <div 
       className="relative w-[1542px] h-[856px] rounded-[42px] flex flex-col items-center"
-      style={{ backgroundColor: '#F4FDFF' }}
+      style={{ 
+        backgroundColor: '#FFFFFF',
+        padding: '19.31px',
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.08)'
+      }}
     >
       {/* Title */}
       <h1 
@@ -86,25 +91,24 @@ export default function QuizCard({
             className="relative"
             style={{
               width: '43.2px',
-              height: '8px',
+              height: '2px',
             }}
           >
-            {/* Segment container with border */}
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundColor: index < currentQuestion ? '#96E5FF' : '#FFFFFF',
-                border: `2px solid #15313D`,
-                borderRadius: '2px',
-              }}
-            />
-            {/* Filled gradient portion for completed segments */}
-            {index < currentQuestion && (
+            {/* Progress segment */}
+            {index < currentQuestion ? (
               <div
                 className="absolute inset-0"
                 style={{
-                  background: 'linear-gradient(to right, #96E5FF, #C6E9F7)',
-                  borderRadius: '2px',
+                  backgroundColor: '#15313D',
+                  borderRadius: '1px',
+                }}
+              />
+            ) : (
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundColor: '#E6E6E6',
+                  borderRadius: '1px',
                 }}
               />
             )}
@@ -129,20 +133,44 @@ export default function QuizCard({
         ))}
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="absolute bottom-[50px] right-[194px]">
-        <NavigationButtons 
-          onPrevious={onPrevious}
-          onNext={onNext}
-          canGoPrevious={currentQuestion > 1}
-          canGoNext={currentQuestion < totalQuestions}
-        />
-      </div>
+      {/* Navigation Buttons or Submit Button */}
+      {currentQuestion === totalQuestions ? (
+        <div className="absolute bottom-[50px] right-[194px]">
+          <motion.button
+            onClick={onNext}
+            className="rounded-lg px-6 py-3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-blue"
+            style={{
+              backgroundColor: '#9AC9E0',
+              color: '#FFFFFF',
+              fontFamily: 'Manrope, sans-serif',
+              fontSize: '16px',
+              fontWeight: 600,
+              width: '120px',
+              height: '50px'
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Submit
+          </motion.button>
+        </div>
+      ) : (
+        <div className="absolute bottom-[50px] right-[194px]">
+          <NavigationButtons 
+            onPrevious={onPrevious}
+            onNext={onNext}
+            canGoPrevious={currentQuestion > 1}
+            canGoNext={currentQuestion < totalQuestions}
+          />
+        </div>
+      )}
 
-      {/* Decorative Paw */}
-      <div className="absolute bottom-[50px] left-[194px]">
-        <DecorativePaw />
-      </div>
+      {/* Decorative Paw - only show on first question */}
+      {currentQuestion === 1 && (
+        <div className="absolute bottom-[50px] left-[194px]">
+          <DecorativePaw />
+        </div>
+      )}
     </div>
   )
 }

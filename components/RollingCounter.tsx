@@ -60,10 +60,10 @@ export default function RollingCounter({ targetValue, duration = 2000 }: Rolling
         style={{
           fontFamily: 'DM Serif Display, serif',
           fontSize: '213.91px',
-          fontWeight: 400,
+          fontWeight: 700,
           letterSpacing: '-2%',
           lineHeight: '214px',
-          color: '#15313D',
+          color: '#2C6E7A',
           textAlign: 'center'
         }}
       >

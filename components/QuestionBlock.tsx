@@ -15,18 +15,19 @@ export default function QuestionBlock({ question }: QuestionBlockProps) {
         paddingTop: '24px',
         paddingRight: '277px',
         paddingBottom: '24px',
-        background: 'linear-gradient(135deg, #96E5FF 0%, rgba(150, 229, 255, 0.5) 100%)',
+        background: 'linear-gradient(to right, #C6E9F7, #E5F8FF)',
         border: '1px solid #96E5FF',
         borderStyle: 'inset'
       }}
     >
       <p
-        className="text-center"
         style={{
           fontFamily: 'Manrope, sans-serif',
           fontSize: '20px',
           fontWeight: 500,
-          color: '#15313D'
+          color: '#15313D',
+          textAlign: 'left',
+          width: '100%'
         }}
       >
         {question}

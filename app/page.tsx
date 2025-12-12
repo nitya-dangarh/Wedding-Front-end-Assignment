@@ -17,13 +17,13 @@ const QUESTIONS = [
   },
   {
     number: 3,
-    question: "How many stars are in the sky?",
-    answers: ["Two", "Infinite", "One Hundred"]
+    question: "What color are bananas?",
+    answers: ["Blue", "Yellow", "Red"]
   },
   {
     number: 4,
-    question: "What color are bananas?",
-    answers: ["Blue", "Yellow", "Red"]
+    question: "How many stars are in the sky?",
+    answers: ["Two", "Infinite", "One Hundred"]
   }
 ]
 
@@ -42,8 +42,8 @@ export default function Home() {
       const correctAnswers: Record<number, string> = {
         1: "Meow-Meow",
         2: "Ice Cream",
-        3: "Infinite",
-        4: "Yellow"
+        3: "Yellow",
+        4: "Infinite"
       }
       
       let correctCount = 0
@@ -70,7 +70,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex items-center justify-center p-8" style={{
-      background: 'linear-gradient(135deg, #BECFEE 0%, #71C6E2 50%, #D9F4FA 75%, #BECFEE 100%)'
+      background: 'linear-gradient(to right, #BECFEE 0%, #E5D4F7 100%)'
     }}>
       <QuizCard
         questionNumber={currentQ.number}
