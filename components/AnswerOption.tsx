@@ -20,12 +20,14 @@ export default function AnswerOption({ text, isSelected, onClick }: AnswerOption
         paddingRight: '425px',
         paddingTop: '27px',
         paddingBottom: '27px',
-        backgroundColor: isSelected ? '#96E5FF' : '#FFFFFF',
+        background: isSelected 
+          ? 'linear-gradient(to bottom, #C6E9F7, #E5F8FF)' 
+          : 'linear-gradient(to bottom, #C6E9F7, #E5F8FF)',
         border: `1px solid ${isSelected ? '#96E5FF' : '#E6E6E6'}`,
         borderStyle: 'inset'
       }}
       whileHover={{
-        backgroundColor: '#96E5FF',
+        background: 'linear-gradient(to bottom, #C6E9F7, #E5F8FF)',
         borderColor: '#96E5FF',
         scale: 1.01
       }}

@@ -79,16 +79,36 @@ export default function QuizCard({
       </p>
 
       {/* Progress Indicator */}
-      <div className="mb-8 flex gap-1 justify-center">
+      <div className="mb-8 flex gap-[2px] justify-center items-center">
         {Array.from({ length: totalQuestions }).map((_, index) => (
           <div
             key={index}
-            className="h-[2px]"
+            className="relative"
             style={{
-              width: index === currentQuestion - 1 ? '43.2px' : '43.2px',
-              backgroundColor: index < currentQuestion ? '#96E5FF' : '#E6E6E6'
+              width: '43.2px',
+              height: '8px',
             }}
-          />
+          >
+            {/* Segment container with border */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundColor: index < currentQuestion ? '#96E5FF' : '#FFFFFF',
+                border: `2px solid #15313D`,
+                borderRadius: '2px',
+              }}
+            />
+            {/* Filled gradient portion for completed segments */}
+            {index < currentQuestion && (
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(to right, #96E5FF, #C6E9F7)',
+                  borderRadius: '2px',
+                }}
+              />
+            )}
+          </div>
         ))}
       </div>
 
