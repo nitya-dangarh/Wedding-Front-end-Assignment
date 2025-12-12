@@ -78,10 +78,20 @@ export default function Home() {
       WebkitBackdropFilter: 'blur(100px)',
       position: 'relative'
     }}>
-      {/* 2nd Layer - Main Content Container */}
+      {/* 2nd Layer - Main Content Blur */}
       <div style={{
         width: '1625px',
         height: '920px',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        borderRadius: '42px',
+        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 100%)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        border: '0.72px solid rgba(255, 255, 255, 0.5)',
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'

@@ -16,15 +16,17 @@ export default function AnswerOption({ text, isSelected, onClick }: AnswerOption
         display: 'flex',
         width: '896px',
         height: '78px',
-        padding: '27px 425px',
+        padding: isSelected ? '27px 425px' : '27px 425px',
         justifyContent: 'center',
         alignItems: 'center',
         gap: '10px',
         borderRadius: '10px',
-        border: '1px solid rgba(150, 229, 255, 0.50)',
+        border: isSelected 
+          ? '1px solid #96E5FF'
+          : '1px solid rgba(150, 229, 255, 0.50)',
         background: isSelected 
-          ? 'linear-gradient(90deg, rgba(198, 233, 247, 0.10) 0.09%, rgba(229, 248, 255, 0.10) 99.91%)'
-          : 'linear-gradient(90deg, rgba(198, 233, 247, 0.10) 0.09%, rgba(229, 248, 255, 0.10) 99.91%)',
+          ? 'linear-gradient(90deg, #C6E9F7 0.09%, #E5F8FF 99.91%)'
+          : 'transparent',
         cursor: 'pointer',
         transition: 'all 0.2s'
       }}
@@ -36,11 +38,14 @@ export default function AnswerOption({ text, isSelected, onClick }: AnswerOption
     >
       <span
         style={{
-          fontFamily: 'Manrope, sans-serif',
-          fontSize: '20px',
-          fontWeight: 500,
           color: '#15313D',
-          textAlign: 'center'
+          textAlign: 'center',
+          fontFamily: 'Inter, sans-serif',
+          fontSize: '22px',
+          fontStyle: 'normal',
+          fontWeight: 600,
+          lineHeight: '24px',
+          letterSpacing: '-0.312px'
         }}
       >
         {text}

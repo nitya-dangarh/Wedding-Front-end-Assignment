@@ -16,8 +16,8 @@ export default function QuestionBlock({ question }: QuestionBlockProps) {
         alignItems: 'center',
         gap: '10px',
         borderRadius: '10px',
-        background: 'linear-gradient(90deg, rgba(198, 233, 247, 0.10) 0.09%, rgba(229, 248, 255, 0.10) 99.91%)',
-        border: '1px solid rgba(150, 229, 255, 0.50)'
+        border: '1px solid #96E5FF',
+        background: 'linear-gradient(90deg, #C6E9F7 0.09%, #E5F8FF 99.91%)'
       }}
     >
       <p
