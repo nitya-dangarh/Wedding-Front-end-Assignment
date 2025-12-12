@@ -16,7 +16,13 @@ export default function NavigationButtons({
   canGoNext = true 
 }: NavigationButtonsProps) {
   return (
-    <div className="flex items-center" style={{ gap: '10px', width: '116px', height: '50px' }}>
+    <div style={{ 
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '10px',
+      width: '116px',
+      height: '50px'
+    }}>
       <motion.button
         className="rounded-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-blue disabled:opacity-50 disabled:cursor-not-allowed"
         style={{

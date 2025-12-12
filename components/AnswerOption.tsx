@@ -12,23 +12,23 @@ export default function AnswerOption({ text, isSelected, onClick }: AnswerOption
   return (
     <motion.button
       onClick={onClick}
-      className="rounded-[10px] flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-blue"
       style={{
+        display: 'flex',
         width: '896px',
         height: '78px',
-        paddingLeft: '425px',
-        paddingRight: '425px',
-        paddingTop: '27px',
-        paddingBottom: '27px',
+        padding: '27px 425px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '10px',
+        borderRadius: '10px',
+        border: '1px solid rgba(150, 229, 255, 0.50)',
         background: isSelected 
-          ? 'linear-gradient(to right, #C6E9F7, #E5F8FF)' 
-          : '#FFFFFF',
-        border: `1px solid ${isSelected ? '#96E5FF' : '#E6E6E6'}`,
-        borderStyle: 'inset'
+          ? 'linear-gradient(90deg, rgba(198, 233, 247, 0.10) 0.09%, rgba(229, 248, 255, 0.10) 99.91%)'
+          : 'linear-gradient(90deg, rgba(198, 233, 247, 0.10) 0.09%, rgba(229, 248, 255, 0.10) 99.91%)',
+        cursor: 'pointer',
+        transition: 'all 0.2s'
       }}
       whileHover={{
-        background: 'linear-gradient(to right, #C6E9F7, #E5F8FF)',
-        borderColor: '#96E5FF',
         scale: 1.01
       }}
       whileTap={{ scale: 0.99 }}
@@ -39,7 +39,8 @@ export default function AnswerOption({ text, isSelected, onClick }: AnswerOption
           fontFamily: 'Manrope, sans-serif',
           fontSize: '20px',
           fontWeight: 500,
-          color: '#15313D'
+          color: '#15313D',
+          textAlign: 'center'
         }}
       >
         {text}

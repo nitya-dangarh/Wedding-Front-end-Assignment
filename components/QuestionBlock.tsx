@@ -7,27 +7,30 @@ interface QuestionBlockProps {
 export default function QuestionBlock({ question }: QuestionBlockProps) {
   return (
     <div
-      className="rounded-[10px] flex items-center justify-center"
       style={{
+        display: 'flex',
         width: '896px',
         height: '78px',
-        paddingLeft: '277px',
-        paddingTop: '24px',
-        paddingRight: '277px',
-        paddingBottom: '24px',
-        background: 'linear-gradient(to right, #C6E9F7, #E5F8FF)',
-        border: '1px solid #96E5FF',
-        borderStyle: 'inset'
+        padding: '24px 277px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '10px',
+        borderRadius: '10px',
+        background: 'linear-gradient(90deg, rgba(198, 233, 247, 0.10) 0.09%, rgba(229, 248, 255, 0.10) 99.91%)',
+        border: '1px solid rgba(150, 229, 255, 0.50)'
       }}
     >
       <p
         style={{
-          fontFamily: 'Manrope, sans-serif',
-          fontSize: '20px',
-          fontWeight: 500,
           color: '#15313D',
-          textAlign: 'left',
-          width: '100%'
+          textAlign: 'center',
+          fontFamily: 'Inter, sans-serif',
+          fontSize: '22px',
+          fontStyle: 'normal',
+          fontWeight: 600,
+          lineHeight: '24px',
+          letterSpacing: '-0.312px',
+          margin: 0
         }}
       >
         {question}

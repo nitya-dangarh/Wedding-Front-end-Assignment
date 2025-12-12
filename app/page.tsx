@@ -69,10 +69,24 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-8" style={{
-      background: 'linear-gradient(to right, #BECFEE 0%, #E5D4F7 100%)'
+    <main className="min-h-screen flex items-center justify-center" style={{
+      width: '1920px',
+      height: '1080px',
+      minHeight: '1080px',
+      background: 'linear-gradient(108deg, #BECFEE 0%, #71C6E2 50%, #D9F4FA 75%, #BECFEE 100%)',
+      backdropFilter: 'blur(100px)',
+      WebkitBackdropFilter: 'blur(100px)',
+      position: 'relative'
     }}>
-      <QuizCard
+      {/* 2nd Layer - Main Content Container */}
+      <div style={{
+        width: '1625px',
+        height: '920px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <QuizCard
         questionNumber={currentQ.number}
         question={currentQ.question}
         answers={currentQ.answers}
@@ -82,7 +96,8 @@ export default function Home() {
         onAnswerSelect={handleAnswerSelect}
         onNext={handleNext}
         onPrevious={handlePrevious}
-      />
+        />
+      </div>
     </main>
   )
 }

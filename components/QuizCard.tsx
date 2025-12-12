@@ -42,77 +42,92 @@ export default function QuizCard({
 
   return (
     <div 
-      className="relative w-[1542px] h-[856px] rounded-[42px] flex flex-col items-center"
+      className="relative flex flex-col items-center"
       style={{ 
-        backgroundColor: '#FFFFFF',
+        width: '1542px',
+        height: '856px',
+        borderRadius: '42px',
+        backgroundColor: '#F4FDFF',
         padding: '19.31px',
-        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.08)'
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.08)',
+        boxSizing: 'border-box'
       }}
     >
       {/* Title */}
       <h1 
-        className="text-center mt-[206px] mb-4"
         style={{ 
-          fontFamily: 'DM Serif Display, serif',
-          fontStyle: 'italic',
+          display: 'flex',
+          width: '919px',
+          height: '102px',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          textAlign: 'center',
+          fontFamily: '"DM Serif Display", serif',
           fontSize: '90px',
+          fontStyle: 'italic',
+          fontWeight: 400,
           lineHeight: '24px',
           letterSpacing: '-4px',
-          color: '#15313D',
-          width: '919px',
-          height: '102px'
+          background: 'linear-gradient(90deg, #15313D 0%, #3CABDA 100%)',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          marginTop: '206px',
+          marginBottom: '16px'
         }}
       >
         Test Your Knowledge
       </h1>
 
       {/* Subtitle */}
-      <p 
-        className="text-center mb-[10px]"
+      <div 
         style={{ 
-          fontFamily: 'Manrope, sans-serif',
-          fontWeight: 500,
-          fontSize: '20px',
-          lineHeight: '24px',
-          letterSpacing: '-0.31px',
-          color: '#15313D',
-          width: '359px',
-          height: '24px'
+          display: 'flex',
+          width: '422px',
+          height: '45px',
+          padding: '10px 31px',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '10px',
+          borderRadius: '8px',
+          backgroundColor: '#FFFFFF',
+          marginBottom: '10px'
         }}
       >
-        Answer all questions to see your results
-      </p>
+        <p 
+          style={{ 
+            fontFamily: 'Manrope, sans-serif',
+            fontWeight: 500,
+            fontSize: '20px',
+            lineHeight: '24px',
+            letterSpacing: '-0.31px',
+            color: '#15313D',
+            textAlign: 'center',
+            margin: 0
+          }}
+        >
+          Answer all questions to see your results
+        </p>
+      </div>
 
       {/* Progress Indicator */}
-      <div className="mb-8 flex gap-[2px] justify-center items-center">
+      <div className="mb-8 flex justify-center items-center" style={{ gap: '0' }}>
         {Array.from({ length: totalQuestions }).map((_, index) => (
-          <div
+          <svg
             key={index}
-            className="relative"
-            style={{
-              width: '43.2px',
-              height: '2px',
-            }}
+            xmlns="http://www.w3.org/2000/svg"
+            width="216"
+            height="2"
+            viewBox="0 0 216 2"
+            fill="none"
+            style={{ display: 'block' }}
           >
-            {/* Progress segment */}
-            {index < currentQuestion ? (
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundColor: '#15313D',
-                  borderRadius: '1px',
-                }}
-              />
-            ) : (
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundColor: '#E6E6E6',
-                  borderRadius: '1px',
-                }}
-              />
-            )}
-          </div>
+            <path 
+              d="M0 1H216" 
+              stroke={index < currentQuestion ? '#E3E3E3' : '#E6E6E6'} 
+              strokeWidth="2"
+            />
+          </svg>
         ))}
       </div>
 
